@@ -1,0 +1,183 @@
+set $mod Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:monospace 8
+
+# ------- floating
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# toggle tiling / floating
+bindsym $mod+t exec "i3-msg floating toggle;\
+i3-msg resize set 960 1000;\
+i3-msg move position center;"
+
+# move recenter
+bindsym $mod+c move position center
+
+# ------- audio
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# ------- direct actions
+# -- split
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# -- focus
+bindsym $mod+s focus left
+bindsym $mod+r focus right
+bindsym $mod+d focus up
+bindsym $mod+l focus down
+
+# -- workspaces
+# set workspace variables
+set $workspace1 "1: main"
+set $workspace2 "2: running"
+set $workspace3 "3: tmp"
+set $workspace4 "4: quiet"
+
+# switch to workspace
+bindsym F8 workspace $workspace1
+bindsym F9 workspace $workspace2
+bindsym F10 workspace $workspace3
+bindsym $mod+F10 workspace $workspace4
+
+# -- kill/dmenu
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+m exec dmenu_run
+
+# -- reload/restart/exit/i3lock
+# (To reload the configuration) I don't bind reload and restart. I run them in a terminal.
+# i3-msg reload
+bindsym $mod+F8 exec "i3-msg restart"
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# ------- start applications
+# start a terminal
+bindsym $mod+1 exec emacs
+bindsym $mod+2 exec i3-sensible-terminal
+bindsym $mod+3 exec chromium-browser
+
+# ------- mode layout
+# change container layout (stacked, tabbed, toggle split)
+# enter fullscreen mode for the focused container
+# bindsym F10 fullscreen toggle
+
+mode "windows" {
+# to change container layout
+bindsym u layout stacking
+bindsym i layout tabbed
+bindsym e layout toggle split
+
+# focus the parent/child container
+bindsym p focus parent
+bindsym c focus child
+
+# -- split
+# split in horizontal orientation
+bindsym h split h
+
+# split in vertical orientation
+bindsym v split v
+
+# -- kill/dmenu
+# kill focused window
+bindsym q kill
+
+# start dmenu (a program launcher)
+bindsym m exec dmenu_run
+
+# resize windows
+bindsym o resize grow width 10 px or 10 ppt
+bindsym Control+o resize shrink width 10 px or 10 ppt
+bindsym x resize grow height 10 px or 10 ppt
+bindsym Control+x resize shrink height 10 px or 10 ppt
+
+# -- focus
+# change focus
+bindsym s focus left
+bindsym r focus right
+bindsym d focus up
+bindsym l focus down
+
+# switch to workspace
+bindsym b workspace $workspace1
+bindsym n workspace $workspace2
+bindsym f workspace $workspace3
+
+# move focused window
+bindsym Control+s move left
+bindsym Control+r move right
+bindsym Control+d move up
+bindsym Control+l move down
+
+# move focused container to workspace
+bindsym Control+b move container to workspace $workspace1
+bindsym Control+n move container to workspace $workspace2
+bindsym Control+f move container to workspace $workspace3
+
+
+# back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+bindsym $mod+j mode "windows"
+
+
+# ------- start i3
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+status_command i3status
+tray_output primary
+
+colors {
+background #151515
+statusline #dedede
+separator #359b79
+
+#colorclass        border background text
+focused_workspace  #458b74 #316453 #dedede
+active_workspace   #333333 #5f676a #dedede
+inactive_workspace #333333 #222222 #888888
+urgent_workspace   #ffd500 #ffd500 #151515
+binding_mode       #dedede #b3b3b3 #151515
+}
+
+}
+
+
+# class                 border  Background text    indicator child_border
+client.focused          #458b74 #316453 #dedede #458b74458b74   #ff0000
+client.urgent          #ffd500 #ffd500 #151515 #458b74458b74   #ff0000
+
+# set my keyboard layout
+exec "setxkbmap -layout takbl"
+
+# set some useful keybinding
+exec "xbindkeys -f ~/.xbindkeysrc"
+
+# set my mouse setting
+exec "bash ~/.mouse-config"
+
+# set monitor relative position
+exec "xrandr --output DP-2 --left-of eDP-1"
+
+# workspaces on specific screens
+workspace $workspace1 output DP-2
+
+# set wallpaper
+exec "feh --bg-fill ~/Documents/media/images/background/web-original-boxing-female-fight-161017.jpg"
