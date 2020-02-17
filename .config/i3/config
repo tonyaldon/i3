@@ -174,7 +174,10 @@ exec --no-startup-id "xbindkeys -f ~/.xbindkeysrc"
 exec --no-startup-id "bash ~/.mouse-config"
 
 # set monitor relative position
-exec "xrandr --output DP-2 --left-of eDP-1"
+# exec --no-startup-id "xrandr --output DP-2 --left-of eDP-1"
+
+# set monitor disable laptop monitor
+exec --no-startup-id "xrandr --output eDP-1 --off"
 
 # workspaces on specific screens
 workspace $workspace1 output DP-2
