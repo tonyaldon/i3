@@ -9,7 +9,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # toggle tiling / floating
-bindsym $mod+t exec "i3-msg floating toggle;\
+bindsym $mod+t exec --no-startup-id "i3-msg floating toggle;\
 i3-msg resize set 960 1000;\
 i3-msg move position center;"
 
@@ -54,21 +54,21 @@ bindsym $mod+F10 workspace $workspace4
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+m exec dmenu_run
+bindsym $mod+m exec --no-startup-id dmenu_run
 
 # -- reload/restart/exit/i3lock
 # (To reload the configuration) I don't bind reload and restart. I run them in a terminal.
 # i3-msg reload
-bindsym $mod+F8 exec "i3-msg restart"
+bindsym $mod+F8 exec --no-startup-id "i3-msg restart"
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # ------- start applications
 # start a terminal
-bindsym $mod+1 exec emacs
-bindsym $mod+2 exec i3-sensible-terminal
-bindsym $mod+3 exec chromium-browser
+bindsym $mod+1 exec --no-startup-id emacs
+bindsym $mod+2 exec --no-startup-id i3-sensible-terminal
+bindsym $mod+3 exec --no-startup-id chromium-browser
 
 # ------- mode layout
 # change container layout (stacked, tabbed, toggle split)
@@ -165,13 +165,13 @@ client.focused          #458b74 #316453 #dedede #458b74458b74   #ff0000
 client.urgent          #ffd500 #ffd500 #151515 #458b74458b74   #ff0000
 
 # set my keyboard layout
-exec "setxkbmap -layout takbl"
+exec --no-startup-id "setxkbmap -layout takbl"
 
 # set some useful keybinding
-exec "xbindkeys -f ~/.xbindkeysrc"
+exec --no-startup-id "xbindkeys -f ~/.xbindkeysrc"
 
 # set my mouse setting
-exec "bash ~/.mouse-config"
+exec --no-startup-id "bash ~/.mouse-config"
 
 # set monitor relative position
 exec "xrandr --output DP-2 --left-of eDP-1"
@@ -180,4 +180,4 @@ exec "xrandr --output DP-2 --left-of eDP-1"
 workspace $workspace1 output DP-2
 
 # set wallpaper
-exec "feh --bg-fill ~/Documents/media/images/background/web-original-boxing-female-fight-161017.jpg"
+#exec --no-startup-id "feh --bg-fill ~/Documents/media/images/background/web-original-boxing-female-fight-161017.jpg"
