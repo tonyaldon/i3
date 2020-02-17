@@ -161,8 +161,8 @@ binding_mode       #dedede #b3b3b3 #151515
 
 
 # class                 border  Background text    indicator child_border
-client.focused          #458b74 #316453 #dedede #458b74458b74   #ff0000
-client.urgent          #ffd500 #ffd500 #151515 #458b74458b74   #ff0000
+client.focused          #458b74 #316453 #dedede #458b74458b74   #458b74
+client.urgent          #ffd500 #ffd500 #151515 #458b74458b74   #ffd500
 
 # set my keyboard layout
 exec --no-startup-id "setxkbmap -layout takbl"
