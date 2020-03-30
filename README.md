@@ -22,9 +22,10 @@ the last stable release of i3.
 
 Get complete information at [i3 documentation - repositories](https://i3wm.org/docs/repositories.html).
 
-3. Configuration files: Copy or make a symlink of the files `./.i3status.conf` 
+3. *Configuration files*: Copy or make a symlink of the files `./.i3status.conf`
 and `.config/i3/config` into your home directory. If you're using this
-repository as a part of my `settings` repository, you can also see its README.md.
+repository as a part of my `settings` repository, you can also see its
+[README.md](https://github.com/tonyaldon/settings).
 
 # License
 
