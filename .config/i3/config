@@ -15,7 +15,7 @@ i3-msg resize set 960 1000;\
 i3-msg move position center;"
 
 # move recenter
-bindsym $mod+c move position center
+# bindsym $mod+c move position center
 # change container layout
 bindsym $mod+Tab layout stacking
 bindsym $mod+w layout toggle split
@@ -26,11 +26,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
 # split in vertical orientation
-bindsym $mod+v split v
+# bindsym $mod+v split v
+bindsym $mod+z split v
+
+# split in horizontal orientation
+# bindsym $mod+h split h
+bindsym $mod+6 split h
+
 
 # -- focus
 bindsym $mod+s focus left
@@ -63,6 +66,11 @@ bindsym $mod+Shift+l move down
 
 # kill focused window
 bindsym $mod+q kill
+bindsym $mod+BackSpace kill
+
+# focus the parent/child container
+bindsym $mod+Shift+C focus parent
+bindsym $mod+c focus child
 
 # start dmenu (a program launcher)
 # bindsym $mod+m exec --no-startup-id "dmenu_run -sb '#316453'"
@@ -124,10 +132,10 @@ bindsym n workspace $workspace2
 bindsym f workspace $workspace3
 
 # move focused window
-bindsym Control+s move left
-bindsym Control+r move right
-bindsym Control+d move up
-bindsym Control+l move down
+bindsym Shift+s move left
+bindsym Shift+r move right
+bindsym Shift+d move up
+bindsym Shift+l move down
 
 # move focused container to workspace
 bindsym Control+b move container to workspace $workspace1
