@@ -40,6 +40,8 @@ bindsym $mod+t exec --no-startup-id "i3-msg floating toggle; \
   i3-msg resize set 960 1000; \
   i3-msg move position center;"
 
+bindsym $mod+Shift+t exec --no-startup-id "i3-msg floating toggle;"
+
 # change container layout
 bindsym $mod+Tab layout stacking
 bindsym $mod+w layout toggle split
@@ -67,15 +69,17 @@ bindsym $mod+Shift+l move down
 
 # set workspace
 set $workspace1 "1: main"
-set $workspace2 "2: running"
-set $workspace3 "3: tmp"
-set $workspace4 "4: quiet"
+set $workspace2 "2: tmp"
+set $workspace3 "3: chrome"
+set $workspace4 "4: media"
+set $workspace5 "5: learning"
 
 # switch to workspace
 bindsym F8 workspace $workspace1
 bindsym F9 workspace $workspace2
 bindsym F10 workspace $workspace3
-bindsym $mod+F10 workspace $workspace4
+bindsym $mod+F9 workspace $workspace4
+bindsym $mod+F10 workspace $workspace5
 
 # move focused container to workspace
 bindsym $mod+Shift+F8 move container to workspace $workspace1
