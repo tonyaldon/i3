@@ -130,3 +130,6 @@ workspace $workspace1 output DP-2
 # set wallpaper
 exec --no-startup-id "feh --bg-fill /home/tony/work/images/background/2019/you-play-as-you-train.png"
 
+# bind C-return to C-c
+bindsym Control+Return exec --no-startup-id xvkbd -no-jump-pointer -xsendevent -text '\Cc'
+
