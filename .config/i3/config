@@ -86,48 +86,6 @@ bindsym $mod+Shift+F8 move container to workspace $workspace1
 bindsym $mod+Shift+F9 move container to workspace $workspace2
 bindsym $mod+Shift+F10 move container to workspace $workspace3
 
-mode "windows" {
-    bindsym u layout stacking
-    bindsym i layout tabbed
-    bindsym e layout toggle split
-
-    bindsym p focus parent
-    bindsym c focus child
-
-    bindsym h split h
-    bindsym v split v
-    bindsym q kill
-    bindsym m exec dmenu_run
-
-    bindsym o resize grow width 10 px or 10 ppt
-    bindsym Control+o resize shrink width 10 px or 10 ppt
-    bindsym x resize grow height 10 px or 10 ppt
-    bindsym Control+x resize shrink height 10 px or 10 ppt
-
-    bindsym s focus left
-    bindsym r focus right
-    bindsym d focus up
-    bindsym l focus down
-
-    bindsym b workspace $workspace1
-    bindsym n workspace $workspace2
-    bindsym f workspace $workspace3
-
-    bindsym Shift+s move left
-    bindsym Shift+r move right
-    bindsym Shift+d move up
-    bindsym Shift+l move down
-
-    bindsym Control+b move container to workspace $workspace1
-    bindsym Control+n move container to workspace $workspace2
-    bindsym Control+f move container to workspace $workspace3
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+j mode "windows"
-
 bar {
     status_command i3status
     tray_output primary
