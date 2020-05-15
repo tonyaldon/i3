@@ -12,9 +12,10 @@ bindsym $mod+F8 exec --no-startup-id "i3-msg restart"
 bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # launch applications
-bindsym $mod+Shift+1 exec --no-startup-id emacs
 bindsym $mod+1 exec --no-startup-id emacsclient -nc
+bindsym $mod+Shift+1 exec --no-startup-id "emacsclient -nc; i3-msg floating toggle"
 bindsym $mod+2 exec --no-startup-id i3-sensible-terminal
+bindsym $mod+Shift+2 exec --no-startup-id "i3-sensible-terminal; i3-msg floating toggle"
 bindsym $mod+3 exec --no-startup-id chromium-browser
 
 # Font for window titles.
@@ -127,4 +128,5 @@ exec --no-startup-id "xrandr --output eDP-1 --off"
 workspace $workspace1 output DP-2
 
 # set wallpaper
-#exec --no-startup-id "feh --bg-fill /path/to/image.jpg"
+exec --no-startup-id "feh --bg-fill /home/tony/work/images/background/2019/you-play-as-you-train.png"
+
