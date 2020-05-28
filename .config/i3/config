@@ -91,7 +91,7 @@ bindsym $mod+Shift+F9 move container to workspace $workspace2
 bindsym $mod+Shift+F10 move container to workspace $workspace3
 
 bar {
-    status_command i3status
+    status_command i3blocks
     tray_output primary
 
     colors {

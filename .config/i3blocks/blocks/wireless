@@ -1,0 +1,14 @@
+#!/bin/bash
+# -*- mode: sh -*-
+
+id=$(iwgetid)
+if [[ $(iwgetid) ]];then
+    echo "UP"
+    echo "UP"
+    echo "#458b74"
+else
+    echo "DOWN"
+    echo "DOWN"
+    echo "#ff6c60"
+    exit
+fi

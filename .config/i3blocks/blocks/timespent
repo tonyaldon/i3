@@ -1,0 +1,7 @@
+#!/bin/bash
+# -*- mode: sh -*-
+
+
+STATUS=~/work/apps/wflow/tmp/status.json
+inotifywait -qq -e close_write $STATUS
+jq -r '.project' $STATUS | tr [a-z] [A-Z]

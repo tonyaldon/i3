@@ -1,0 +1,22 @@
+[timespent]
+command=~/.config/i3blocks/blocks/timespent
+color=#7edbbd
+interval=repeat
+
+[wireless]
+command=~/.config/i3blocks/blocks/wireless
+interval=5
+
+[disk_usage]
+command=df -h / | grep sda1 | awk '{print $4}'
+interval=5
+
+[cpu_usage]
+command=~/.config/i3blocks/blocks/cpu_usage
+label=CPU:
+interval=5
+
+[time]
+command=date +"WEEK-%V DAY-%j/%d TIME-%H:%M "
+interval=5
+

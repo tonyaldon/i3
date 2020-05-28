@@ -14,4 +14,5 @@ install:
 	apt update ; \
 	apt install i3 ; \
 	rm ./keyring.deb ; \
-	su $$SUDO_USER
+	su $$SUDO_USER ; \
+	sudo apt install i3blocks
