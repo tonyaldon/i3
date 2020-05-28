@@ -115,9 +115,6 @@ client.urgent           #ffd500   #ffd500      #151515   #458b74458b74   #ffd500
 # set my keyboard layout
 exec --no-startup-id "setxkbmap -layout takbl"
 
-# set some useful keybinding
-exec --no-startup-id "xbindkeys -f ~/.xbindkeysrc"
-
 # set my mouse setting
 exec --no-startup-id "bash ~/.mouse-config"
 
