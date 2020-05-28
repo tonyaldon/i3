@@ -1,3 +1,4 @@
+# -*- mode: i3-conf-mode -*-
 # Modifier key
 set $mod Mod4
 
@@ -6,7 +7,7 @@ bindsym $mod+q kill
 bindsym $mod+BackSpace kill
 
 # restart i3
-bindsym $mod+F8 exec --no-startup-id "i3-msg restart"
+bindsym $mod+space exec --no-startup-id "i3-msg restart"
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -36,12 +37,14 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# toggle tiling / floating
+# toggle
 bindsym $mod+t exec --no-startup-id "i3-msg floating toggle; \
   i3-msg resize set 960 1000; \
   i3-msg move position center;"
-
 bindsym $mod+Shift+t exec --no-startup-id "i3-msg floating toggle;"
+bindsym $mod+plus scratchpad show
+bindsym $mod+0 move scratchpad
+bindsym $mod+F8 sticky toggle
 
 # change container layout
 bindsym $mod+Tab layout stacking
