@@ -133,3 +133,7 @@ exec --no-startup-id "feh --bg-fill /home/tony/work/images/background/2019/you-p
 # bind C-return to C-c
 bindsym Control+Return exec --no-startup-id xvkbd -no-jump-pointer -xsendevent -text '\Cc'
 
+# automatically place window on workspace
+assign [class="Anki"] $workspace5
+for_window [class="Anki"] floating enable
+assign [class="Klavaro"] $workspace5
