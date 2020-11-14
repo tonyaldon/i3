@@ -1,4 +1,4 @@
-# -*- mode: i3-conf-mode -*-
+# -*- mode: i3 -*-
 # Modifier key
 set $mod Mod4
 
@@ -14,6 +14,7 @@ bindsym $mod+Shift+q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed 
 
 # launch applications
 bindsym $mod+1 exec --no-startup-id emacsclient -nc
+bindsym Control+F2 exec --no-startup-id emacs
 bindsym $mod+Shift+1 exec --no-startup-id "emacsclient -nc; i3-msg floating toggle"
 bindsym $mod+2 exec --no-startup-id i3-sensible-terminal
 bindsym $mod+Shift+2 exec --no-startup-id "i3-sensible-terminal; i3-msg floating toggle"
@@ -76,7 +77,7 @@ set $workspace1 "1: main"
 set $workspace2 "2: tmp"
 set $workspace3 "3: chrome"
 set $workspace4 "4: media"
-set $workspace5 "5: learning"
+set $workspace5 "5: practice"
 
 # switch to workspace
 bindsym F8 workspace $workspace1
@@ -132,6 +133,11 @@ exec --no-startup-id "feh --bg-fill /home/tony/work/images/background/2019/you-p
 
 # bind C-return to C-c
 bindsym Control+Return exec --no-startup-id xvkbd -no-jump-pointer -xsendevent -text '\Cc'
+
+# i3-quiet
+# https://github.com/vrde/i3-quiet
+bindsym $mod+minus exec --no-startup-id "~/.config/i3/quiet-cmd.py toggle; \
+				i3-msg bar mode toggle"
 
 # automatically place window on workspace
 assign [class="Anki"] $workspace5
