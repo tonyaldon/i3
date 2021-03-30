@@ -72,6 +72,12 @@ bindsym $mod+Shift+r move right
 bindsym $mod+Shift+d move up
 bindsym $mod+Shift+l move down
 
+# resize
+bindsym $mod+Left resize shrink width 10 px or 10 ppt
+bindsym $mod+Right resize grow width 10 px or 10 ppt
+bindsym $mod+Up resize shrink height 10 px or 10 ppt
+bindsym $mod+Down resize grow height 10 px or 10 ppt
+
 # set workspace
 set $workspace1 "1: main"
 set $workspace2 "2: tmp"
