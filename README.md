@@ -1,8 +1,14 @@
+# Archive
+
+I switched to [dwm](https://dwm.suckless.org/) window manager.  This
+is why I no longer maintain this repository.  You can find my build of
+`dwm` [here](https://github.com/tonyaldon/dwm).
+
 # About
 `i3` pools my *i3* configuration files and a *Makefile* to install
 the last stable release of i3.
 
-# Motivation 
+# Motivation
 
 1. Good management of my workspace to work efficiently.
 2. Share my setting system
@@ -12,7 +18,7 @@ the last stable release of i3.
 ## i3
 1. To install `i3` from the official `ubuntu` repositories, run the
    command:
-   
+
 		sudo apt install i3
 
 2. To install the last release of `i3` on `ubuntu`, run the commands:
